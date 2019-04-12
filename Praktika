@@ -1,6 +1,6 @@
 ## **1.Начало работы с LVM**
  
-Используем команду lsblk и утилиту lvmdiskscan, чтобы определить какие устройства мы хотим использовать в качестве Physical Volumes для будущих Volume Groups:
+Используем команду lsblk и утилиту lvmdiskscan, чтобы определить какие устройства мы хотим использовать в качестве Physical Volumes для будущих Volume Groups(VG):
 
 [vagrant@otuslvm ~]$ lsblk
 
@@ -157,5 +157,4 @@ Writing superblocks and filesystem accounting information: done
 [vagrant@otuslvm ~]$ sudo mount | grep /data
 
 /dev/mapper/otus-test on /data type ext4 (rw,relatime,seclabel,data=ordered)
-
 
