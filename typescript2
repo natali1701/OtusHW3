@@ -1,0 +1,442 @@
+Script started on Fri 12 Apr 2019 02:18:33 PM UTC
+]0;vagrant@otuslvm:/home/vagrant[?1034h[root@otuslvm vagrant]# exitlvremove /dev/VolGroup00/LogVol00[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Creboot[Klvremove /dev/VolGroup00/LogVol00[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csblk[K[K[K[K[K[Kvi typescript 
+[?1049h[?1h=[1;35r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[35;1H"typescript" 0L, 0C[2;1H[94m~                                                                                                                                                     [3;1H~                                                                                                                                                     [4;1H~                                                                                                                                                     [5;1H~                                                                                                                                                     [6;1H~                                                                                                                                                     [7;1H~                                                                                                                                                     [8;1H~                                                                                                                                                     [9;1H~                                                                                                                                                     [10;1H~                                                                                                                                                     [11;1H~                                                                                                                                                     [12;1H~                                                                                                                                                     [13;1H~                                                                                                                                                     [14;1H~                                                                                                                                                     [15;1H~                                                                                                                                                     [16;1H~                                                                                                                                                     [17;1H~                                                                                                                                                     [18;1H~                                                                                                                                                     [19;1H~                                                                                                                                                     [20;1H~                                                                                                                                                     [21;1H~                                                                                                                                                     [22;1H~                                                                                                                                                     [23;1H~                                                                                                                                                     [24;1H~                                                                                                                                                     [25;1H~                                                                                                                                                     [26;1H~                                                                                                                                                     [27;1H~                                                                                                                                                     [28;1H~                                                                                                                                                     [29;1H~                                                                                                                                                     [30;1H~                                                                                                                                                     [31;1H~                                                                                                                                                     [32;1H~                                                                                                                                                     [33;1H~                                                                                                                                                     [34;1H~                                                                                                                                                     [1;1H[?12l[?25h[?25l[m[35;1H[K[35;1H:[?12l[?25hq[?25l[35;1H[K[35;1H[?1l>[?12l[?25h[?1049l]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# lvremove /dev/VolGroup00/LogVol00
+Do you really want to remove active logical volume VolGroup00/LogVol00? [y/n]: y
+  Logical volume "LogVol00" successfully removed
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]#  
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# lvcreate -n VolGroup00/LogVol00 -L 8G /dev/VolGroup00
+WARNING: xfs signature detected on /dev/VolGroup00/LogVol00 at offset 0. Wipe it? [y/n]: y
+  Wiping xfs signature on /dev/VolGroup00/LogVol00.
+  Logical volume "LogVol00" created.
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# mkfs.xfs /dev/VolGroup00/LogVol00
+meta-data=/dev/VolGroup00/LogVol00 isize=512    agcount=4, agsize=524288 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=0, sparse=0
+data     =                       bsize=4096   blocks=2097152, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+log      =internal log           bsize=4096   blocks=2560, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# mount /dev/VolGroup00/LogVol00 /mnt
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# mount /dev/VolGroup00/LogVol00 /mnt
+mount: /dev/mapper/VolGroup00-LogVol00 is already mounted or /mnt busy
+       /dev/mapper/VolGroup00-LogVol00 is already mounted on /mnt
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# xfsdump -J - /dev/vg_root/lv_root | xfsrestore -J - /mnt
+xfsrestore: using file dump (drive_simple) strategy
+xfsrestore: version 3.1.7 (dump format 3.0)
+xfsdump: using file dump (drive_simple) strategy
+xfsdump: version 3.1.7 (dump format 3.0)
+xfsdump: level 0 dump of otuslvm:/
+xfsdump: dump date: Fri Apr 12 14:19:47 2019
+xfsdump: session id: a144379e-ac4d-4450-965e-37170f825059
+xfsdump: session label: ""
+xfsrestore: searching media for dump
+xfsdump: ino map phase 1: constructing initial dump list
+xfsdump: ino map phase 2: skipping (no pruning necessary)
+xfsdump: ino map phase 3: skipping (only one dump stream)
+xfsdump: ino map construction complete
+xfsdump: estimated dump size: 860462080 bytes
+xfsdump: creating dump session media file 0 (media 0, file 0)
+xfsdump: dumping ino map
+xfsdump: dumping directories
+xfsrestore: examining media file 0
+xfsrestore: dump description: 
+xfsrestore: hostname: otuslvm
+xfsrestore: mount point: /
+xfsrestore: volume: /dev/mapper/vg_root-lv_root
+xfsrestore: session time: Fri Apr 12 14:19:47 2019
+xfsrestore: level: 0
+xfsrestore: session label: ""
+xfsrestore: media label: ""
+xfsrestore: file system id: e688366f-ea9d-46d9-a213-f009a34bb99d
+xfsrestore: session id: a144379e-ac4d-4450-965e-37170f825059
+xfsrestore: media id: ae8e2b2a-2a5f-4adc-ba5e-cce928d4b489
+xfsrestore: searching media for directory dump
+xfsrestore: reading directories
+xfsdump: dumping non-directory files
+xfsrestore: 2715 directories and 23814 entries processed
+xfsrestore: directory post-processing
+xfsrestore: restoring non-directory files
+xfsdump: ending media file
+xfsdump: media file size 836826728 bytes
+xfsdump: dump size (non-dir files) : 823538864 bytes
+xfsdump: dump complete: 58 seconds elapsed
+xfsdump: Dump Status: SUCCESS
+xfsrestore: restore complete: 58 seconds elapsed
+xfsrestore: Restore Status: SUCCESS
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# for i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind $i /mnt/$i; done[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[18Pxfsdump -J - /dev/vg_root/lv_root | xfsrestore -J - /mnt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfor i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind $i /mnt/$i; done
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# for i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind $i /mnt/$i; done[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kchroot /mnt/
+]0;vagrant@otuslvm:/[?1034h[root@otuslvm /]# grub2-mkconfig -o /boot/grub2/grub.cfg
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-3.10.0-862.2.3.el7.x86_64
+Found initrd image: /boot/initramfs-3.10.0-862.2.3.el7.x86_64.img
+done
+]0;vagrant@otuslvm:/[root@otuslvm /]# cd /boot ; for i in `ls initramfs-*img`; do dracut -v $i `echo $i|sed "s/initramfs-//g; s/.img//g"` --force; done
+Executing: /usr/bin/dracut -v initramfs-3.10.0-862.2.3.el7.x86_64.img 3.10.0-862.2.3.el7.x86_64 --force
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+*** Including module: bash ***
+*** Including module: nss-softokn ***
+*** Including module: i18n ***
+*** Including module: drm ***
+*** Including module: plymouth ***
+*** Including module: dm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 60-persistent-storage-dm.rules
+Skipping udev rule: 55-dm.rules
+*** Including module: kernel-modules ***
+Omitting driver floppy
+*** Including module: lvm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 56-lvm.rules
+Skipping udev rule: 60-persistent-storage-lvm.rules
+*** Including module: qemu ***
+*** Including module: resume ***
+*** Including module: rootfs-block ***
+*** Including module: terminfo ***
+*** Including module: udev-rules ***
+Skipping udev rule: 40-redhat-cpu-hotplug.rules
+Skipping udev rule: 91-permissions.rules
+*** Including module: biosdevname ***
+*** Including module: systemd ***
+*** Including module: usrmount ***
+*** Including module: base ***
+*** Including module: fs-lib ***
+*** Including module: shutdown ***
+*** Including modules done ***
+*** Installing kernel module dependencies and firmware ***
+*** Installing kernel module dependencies and firmware done ***
+*** Resolving executable dependencies ***
+*** Resolving executable dependencies done***
+*** Hardlinking files ***
+*** Hardlinking files done ***
+*** Stripping files ***
+*** Stripping files done ***
+*** Generating early-microcode cpio image contents ***
+*** Constructing AuthenticAMD.bin ****
+*** Store current command line parameters ***
+*** Creating image file ***
+*** Creating microcode section ***
+*** Created microcode section ***
+*** Creating image file done ***
+*** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
+]0;vagrant@otuslvm:/boot[root@otuslvm boot]# pvcreate /dev/sdc /dev/sdd
+  Physical volume "/dev/sdc" successfully created.
+  Physical volume "/dev/sdd" successfully created.
+]0;vagrant@otuslvm:/boot[root@otuslvm boot]# vgcreate vg_var /dev/sdc /dev/sdd[C
+  Volume group "vg_var" successfully created
+]0;vagrant@otuslvm:/boot[root@otuslvm boot]# lvcreate -L 950M -m1 -n lv_var vg_var
+  Rounding up size to full physical extent 952.00 MiB
+  Logical volume "lv_var" created.
+]0;vagrant@otuslvm:/boot[root@otuslvm boot]# mkfs.ext4 /dev/vg_var/lv_var
+mke2fs 1.42.9 (28-Dec-2013)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+60928 inodes, 243712 blocks
+12185 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=249561088
+8 block groups
+32768 blocks per group, 32768 fragments per group
+7616 inodes per group
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376
+
+Allocating group tables: 0/8   done                            
+Writing inode tables: 0/8   done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information: 0/86/8   done
+
+]0;vagrant@otuslvm:/boot[root@otuslvm boot]# mount /dev/vg_var/lv_var /mnt
+]0;vagrant@otuslvm:/boot[root@otuslvm boot]# cp -aR /var/* /mnt/      
+^C
+]0;vagrant@otuslvm:/boot[root@otuslvm boot]# cp -aR /var/* /mnt/      # rsync -avHPSAX /var/ /mnt/
+cp: overwrite ‘/mnt/cache/ldconfig/aux-cache’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/base/gen/primary_db.sqlite’? n
+]0;vagrant@otuslvm:/boot[root@otuslvm boot]# mkdir /tmp/oldvar && mv /var/* /tmp/oldvar
+]0;vagrant@otuslvm:/boot[root@otuslvm boot]#  
+]0;vagrant@otuslvm:/boot[root@otuslvm boot]# umount /mnt
+]0;vagrant@otuslvm:/boot[root@otuslvm boot]#  
+]0;vagrant@otuslvm:/boot[root@otuslvm boot]# umount /mnt[K[K[K[K[K[K[K[K[K[K[Kmount /dev/vg_var/lv_var /var
+]0;vagrant@otuslvm:/boot[root@otuslvm boot]# echo "`blkid | grep var: | awk '{print $2}'` /var ext4 defaults 0 0" >> /etc/fstab
+]0;vagrant@otuslvm:/boot[root@otuslvm boot]# exit
+exit
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# pwd
+/home/vagrant
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# ls -a
+[0m[38;5;27m.[0m  [38;5;27m..[0m  .bash_logout  .bash_profile  .bashrc  [38;5;27m.ssh[0m  typescript
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# vi typescript 
+[?1049h[?1h=[1;35r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[35;1H"typescript" [noeol] 100L, 12288C[1;1HScript started on Fri 12 Apr 2019 02:18:33 PM UTC
+[34m^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G^[[m[?1034h[root@otuslvm vagrant]# exit[34m^H^H^H^H[mlvremove /dev/VolGroup00/LogVol00[34m^M^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[[m[3;1H[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[Creboot[34m^[[m[K[34m^H^H^H^H^H^H[mlvremove /dev/VolGroup00/LogVol00[34m^M^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[[[4;1HC[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[Csblk[34m^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^G^G^G^G^G^G^G[mvi typescript [34m^M
+^[[m[?1049h[34m^[[m[?1h[34m^[[m=[34m^[[m[1;35r[34m^[[m[?12;25h[34m^[[m[?12l[34m^[[m[?25h[34m^[[m[27m[34m^[[m[m[34m^[[m[H[34m^[[m[2J[34m^[[m[?25l[34m^[[m[35;1H"typescript" 0L, 0C[34m^[[m[2;1H[34m^[[m[94m~[32C  [6;1H [115C[34m^[[m[3;1H~[25C  [7;1H [122C[34m^[[m[4;1H~[18C  [8;1H [129C[34m^[[m[5;1H~[11C  [9;1H [136C[34m^[[m[6;1H~      [10;1H [143C[34m^[[m[7;11[11;1HH~[147C  [12;1H [34m^[[m[8;1H~[140C  [13;1H [7C[34m^[[m[9;1H~[133C  [14;1H [14C[34m^[[m[10;1H~[125C  [15;1H [22C[34m^[[m[11;1H~[117C  [16;1H [30C[34m^[[m[12;1H~[109C  [17;1H [38C[34m^[[m[13;1H~[101C  [18;1H [46C[34m^[[m[14;1H~[93C  [19;1H [54C[34m^[[m[15;1H~[85C  [20;1H [62C[34m^[[m[16;1H~[77C  [21;1H [70C[34m^[[m[17;1H~[69C  [22;1H [78C[34m^[[m[18;1H~[61C  [23;1H [86C[34m^[[m[19;1H~[53C  [24;1H [94C[34m^[[m[20;1H~[45C  [25;1H [102C[34m^[[m[21;1H~[37C  [26;1H [110C[34m^[[m[22;1H~[29C  [27;1H [118C[34m^[[m[23;1H~[21C  [28;1H [126C[34m^[[m[24;1H~[13C  [29;1H [134C[34m^[[m[25;1H~       [30;1H [142C[34m^[[m[26;11[31;1HH~[147C  [32;1H [34m^[[m[27;1H~[139C  [33;1H [8C[34m^[[m[28;1H~[131C  [34;1H [16C[34m^[[m[29;1H~[5;1H[94m@                                                                                                                                                     [6;1H@                                                                                                                                                     [7;1H@                                                                                                                                                     [8;1H@                                                                                                                                                     [9;1H@                                                                                                                                                     [10;1H@                                                                                                                                                     [11;1H@                                                                                                                                                     [12;1H@                                                                                                                                                     [13;1H@                                                                                                                                                     [14;1H@                                                                                                                                                     [15;1H@                                                                                                                                                     [16;1H@                                                                                                                                                     [17;1H@                                                                                                                                                     [18;1H@                                                                                                                                                     [19;1H@                                                                                                                                                     [20;1H@                                                                                                                                                     [21;1H@                                                                                                                                                     [22;1H@                                                                                                                                                     [23;1H@                                                                                                                                                     [24;1H@                                                                                                                                                     [25;1H@                                                                                                                                                     [26;1H@                                                                                                                                                     [27;1H@                                                                                                                                                     [28;1H@                                                                                                                                                     [29;1H@                                                                                                                                                     [30;1H@                                                                                                                                                     [31;1H@                                                                                                                                                     [32;1H@                                                                                                                                                     [33;1H@                                                                                                                                                     [34;1H@                                                                                                                                                     [1;1H[?12l[?25h
+[?25l[1;34r[m[1;1H[4M[1;35r[1;1H[34m^[[m[?1049h[34m^[[m[?1h[34m^[[m=[34m^[[m[1;35r[34m^[[m[?12;25h[34m^[[m[?12l[34m^[[m[?25h[34m^[[m[27m[34m^[[m[m[34m^[[m[H[34m^[[m[2J[34m^[[m[?25l[34m^[[m[35;1H"typescript" 0L, 0C[34m^[[m[2;1H[34m^[[m[94m~                                  [2;1H                                                                                                                    [34m^[[m[3;1H~                           [3;1H                                                                                                                           [34m^[[m[4;1H~                    [4;1H                                                                                                                                  [34m^[[m[5;1H~             [5;1H                                                                                                                                         [34m^[[m[6;1H~      [6;1H                                                                                                                                                [34m^[[m[7;11[7;1HH~                                                                                                                                                     [8;1H [34m^[[m[8;1H~                                                                                                                                              [9;1H        [34m^[[m[9;1H~                                                                                                                                       [10;1H               [34m^[[m[10;1H~                                                                                                                               [11;1H                       [34m^[[m[11;1H~                                                                                                                       [12;1H                               [34m^[[m[12;1H~                                                                                                               [13;1H                                       [34m^[[m[13;1H~                                                                                                       [14;1H                                               [34m^[[m[14;1H~                                                                                               [15;1H                                                       [34m^[[m[15;1H~                                                                                       [16;1H                                                               [34m^[[m[16;1H~                                                                               [17;1H                                                                       [34m^[[m[17;1H~                                                                       [18;1H                                                                               [34m^[[m[18;1H~                                                               [19;1H                                                                                       [34m^[[m[19;1H~                                                       [20;1H                                                                                               [34m^[[m[20;1H~                                               [21;1H                                                                                                       [34m^[[m[21;1H~                                       [22;1H                                                                                                               [34m^[[m[22;1H~                               [23;1H                                                                                                                       [34m^[[m[23;1H~                       [24;1H                                                                                                                               [34m^[[m[24;1H~               [25;1H                                                                                                                                       [34m^[[m[25;1H~       [26;1H                                                                                                                                               [34m^[[m[26;11[27;1HH~                                                                                                                                                     [28;1H [34m^[[m[27;1H~                                                                                                                                             [29;1H         [34m^[[m[28;1H~                                                                                                                                     [30;1H                 [34m^[[m[29;1H~                                                                                                                             [31;1H [24C[34m^[[m[30;1H~[115C  [32;1H [32C[34m^[[m[31;1H~[107C  [33;1H [40C[34m^[[m[32;1H~[99C  [34;1H [48C[34m^[[m[33;1H~[35;1H[K[1;1H[?12l[?25h[?25l[27m[m[H[2J[1;1HDo you really want to remove active logical volume VolGroup00/LogVol00? [y/n]: y[34m^M[m
+  Logical volume "LogVol00" successfully removed[34m^M
+^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]#  [34m^M
+^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# lvcreate -n VolGroup00/LogVol00 -L 8G /dev/VolGroup00[34m^M[m
+WARNING: xfs signature detected on /dev/VolGroup00/LogVol00 at offset 0. Wipe it? [y/n]: y[34m^M[m
+  Wiping xfs signature on /dev/VolGroup00/LogVol00.[34m^M[m
+  Logical volume "LogVol00" created.[34m^M
+^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# mkfs.xfs /dev/VolGroup00/LogVol00[34m^M[m
+meta-data=/dev/VolGroup00/LogVol00 isize=512    agcount=4, agsize=524288 blks[34m^M[m[10;10H=[23Csectsz=512   attr=2, projid32bit=1[34m^M[m[11;10H=[23Ccrc=1[8Cfinobt=0, sparse=0[34m^M[m
+data     =[23Cbsize=4096   blocks=2097152, imaxpct=25[34m^M[m[13;10H=[23Csunit=0      swidth=0 blks[34m^M[m
+naming   =version 2[14Cbsize=4096   ascii-ci=0 ftype=1[34m^M[m
+log      =internal log[11Cbsize=4096   blocks=2560, version=2[34m^M[m[16;10H=[23Csectsz=512   sunit=0 blks, lazy-count=1[34m^M[m
+realtime =none[19Cextsz=4096   blocks=0, rtextents=0[34m^M
+^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# mount /dev/VolGroup00/LogVol00 /mnt[34m^M
+^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# mount /dev/VolGroup00/LogVol00 /mnt[34m^M[m
+mount: /dev/mapper/VolGroup00-LogVol00 is already mounted or /mnt busy[34m^M[m[21;8H/dev/mapper/VolGroup00-LogVol00 is already mounted on /mnt[34m^M
+^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# xfsdump -J - /dev/vg_root/lv_root | xfsrestore -J - /mnt[34m^M[m
+xfsrestore: using file dump (drive_simple) strategy[34m^M[m
+xfsrestore: version 3.1.7 (dump format 3.0)[34m^M[m
+xfsdump: using file dump (drive_simple) strategy[34m^M[m
+xfsdump: version 3.1.7 (dump format 3.0)[34m^M[m
+xfsdump: level 0 dump of otuslvm:/[34m^M[m
+xfsdump: dump date: Fri Apr 12 14:19:47 2019[34m^M[m
+xfsdump: session id: a144379e-ac4d-4450-965e-37170f825059[34m^M[m
+xfsdump: session label: ""[34m^M[m
+xfsrestore: searching media for dump[34m^M[m
+xfsdump: ino map phase 1: constructing initial dump list[34m^M[m
+xfsdump: ino map phase 2: skipping (no pruning necessary)[34m^M[m
+xfsdump: ino map phase 3: skipping (only one dump stream)[34m^M[1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: ino map construction complete[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: estimated dump size: 860462080 bytes[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: creating dump session media file 0 (media 0, file 0)[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: dumping ino map[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: dumping directories[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: examining media file 0[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: dump description: [34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: hostname: otuslvm[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: mount point: /[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: volume: /dev/mapper/vg_root-lv_root[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: session time: Fri Apr 12 14:19:47 2019[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: level: 0[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: session label: ""[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: media label: ""[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: file system id: e688366f-ea9d-46d9-a213-f009a34bb99d[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: session id: a144379e-ac4d-4450-965e-37170f825059[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: media id: ae8e2b2a-2a5f-4adc-ba5e-cce928d4b489[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: searching media for directory dump[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: reading directories[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: dumping non-directory files[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: 2715 directories and 23814 entries processed[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: directory post-processing[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: restoring non-directory files[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: ending media file[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: media file size 836826728 bytes[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: dump size (non-dir files) : 823538864 bytes[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: dump complete: 58 seconds elapsed[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: Dump Status: SUCCESS[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: restore complete: 58 seconds elapsed[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: Restore Status: SUCCESS[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[4M[1;35r[31;1H[34m^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# for i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind $i /mnt/$i; done[34m^M^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[[m[32;1H[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[18Pxfsdump -J - /dev/vg_root/lv_root | xfsrestore -J - /mnt[34m^M^[[m[CC[33;1H[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[Cfor i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind  [34;1H$i /mnt/$i; done[34m^G^M[31;1H[?12l[?25h[?25l[1;34r[m[1;1H[5M[1;35r[30;1H[34m^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# for i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind $i /mnt/$i; done[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[[m[31;1H[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[[m[32;1H[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[[m[33;1H[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^G^G^G^G^G^G[mchroot /mnn[34;1Ht/[34m^M[30;1H[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1H[34m^[[m]0;vagrant@otuslvm:/[34m^G^[[m[?1034h[root@otuslvm /]# grub2-mkconfig -o /boot/grub2/grub.cfg[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1HGenerating grub configuration file ...[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1HFound linux image: /boot/vmlinuz-3.10.0-862.2.3.el7.x86_64[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1HFound initrd image: /boot/initramfs-3.10.0-862.2.3.el7.x86_64.img[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdone[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[2M[1;35r[33;1H[34m^[[m]0;vagrant@otuslvm:/[34m^G[m[root@otuslvm /]# cd /boot ; for i in `ls initramfs-*img`; do dracut -v $i `echo $i|sed "s/initramfs-//g; s/.img//g"` --force;;[34;1H done[34m^M[33;1H[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1HExecuting: /usr/bin/dracut -v initramfs-3.10.0-862.2.3.el7.x86_64.img 3.10.0-862.2.3.el7.x86_64 --force[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'busybox' will not be installed, because command 'busybox' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'dmraid' will not be installed, because command 'dmraid' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'multipath' will not be installed, because command 'multipath' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'busybox' will not be installed, because command 'busybox' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'dmraid' will not be installed, because command 'dmraid' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'multipath' will not be installed, because command 'multipath' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1H*** Including module: bash ***[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1H*** Including module: nss-softokn ***[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1H*** Including module: i18n ***[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1H*** Including module: drm ***[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1H*** Including module: plymouth ***[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1H*** Including module: dm ***[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1HSkipping udev rule: 64-device-mapper.rules[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[4M[1;35r[31;1HSkipping udev rule: 60-persistent-storage-dm.rules[34m^M[m
+Skipping udev rule: 55-dm.rules[34m^M[m
+*** Including module: kernel-modules ***[34m^M[m
+Omitting driver floppy[34m^M[31;1H[?12l[?25h
+
+
+[?25l[1;34r[m[1;1H[5M[1;35r[30;1H*** Including module: lvm ***[34m^M[m
+Skipping udev rule: 64-device-mapper.rules[34m^M[m
+Skipping udev rul
+[94m~                                                                                                                                                     [34;1H~                                                                                                                                                     [30;1H[?12l[?25h
+
+[31;1H[30;1H[29;1H[28;1H[27;1H[26;1H[25;1H[24;1H[23;1H[22;1H[21;1H[20;1H[19;1H[18;1H[17;1H[16;1H[15;1H[14;1H[13;1H[12;1H[11;1H[10;1H[9;1H[8;1H[6;1H[5;1H[4;1H[3;1H[2;1H[1;1H[?25l[1;34r[m[1;1H[5L[1;35r[1;1H[34m^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# for i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind $i /mnt/$i; done[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[[m[2;1H[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[[m[3;1H[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[[m[4;1H[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^G^G^G^G^G^G[mchroot /mnn[5;1Ht/[34m^M[1;1H[?12l[?25h[?25l[1;34r[m[1;1H[4L[1;35r[1;1H[34m^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# for i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind $i /mnt/$i; done[34m^M^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[[m[2;1H[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[18Pxfsdump -J - /dev/vg_root/lv_root | xfsrestore -J - /mnt[34m^M^[[m[CC[3;1H[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[Cfor i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind  [4;1H$i /mnt/$i; done[34m^G^M[1;1H[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: Restore Status: SUCCESS[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: restore complete: 58 seconds elapsed[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: Dump Status: SUCCESS[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: dump complete: 58 seconds elapsed[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: dump size (non-dir files) : 823538864 bytes[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: media file size 836826728 bytes[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: ending media file[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: restoring non-directory files[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: directory post-processing[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: 2715 directories and 23814 entries processed[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: dumping non-directory files[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: reading directories[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: searching media for directory dump[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: media id: ae8e2b2a-2a5f-4adc-ba5e-cce928d4b489[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: session id: a144379e-ac4d-4450-965e-37170f825059[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: file system id: e688366f-ea9d-46d9-a213-f009a34bb99d[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: media label: ""[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: session label: ""[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: level: 0[34m^M[m[34;1H[94m@                                                                                                                                                     [1;1H[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: session time: Fri Apr 12 14:19:47 2019[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: volume: /dev/mapper/vg_root-lv_root[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: mount point: /[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: hostname: otuslvm[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: dump description: [34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: examining media file 0[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: dumping directories[34m^M[m[31;1H[94m@                                                                                                                                                     [32;1H@                                                                                                                                                     [33;1H@                                                                                                                                                     [34;1H@                                                                                                                                                     [1;1H[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: dumping ino map[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: creating dump session media file 0 (media 0, file 0)[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: estimated dump size: 860462080 bytes[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: ino map construction complete[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: ino map phase 3: skipping (only one dump stream)[34m^M[m[32;1H[94m@                                                                                                                                                     [33;1H@                                                                                                                                                     [34;1H@                                                                                                                                                     [1;1H[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: ino map phase 2: skipping (no pruning necessary)[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: ino map phase 1: constructing initial dump list[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: searching media for dump[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: session label: ""[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: session id: a144379e-ac4d-4450-965e-37170f825059[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: dump date: Fri Apr 12 14:19:47 2019[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: level 0 dump of otuslvm:/[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: version 3.1.7 (dump format 3.0)[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsdump: using file dump (drive_simple) strategy[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: version 3.1.7 (dump format 3.0)[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hxfsrestore: using file dump (drive_simple) strategy[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1H[34m^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# xfsdump -J - /dev/vg_root/lv_root | xfsrestore -J - /mnt[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;8H/dev/mapper/VolGroup00-LogVol00 is already mounted on /mnt[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hmount: /dev/mapper/VolGroup00-LogVol00 is already mounted or /mnt busy[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1H[34m^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# mount /dev/VolGroup00/LogVol00 /mnt[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1H[34m^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# mount /dev/VolGroup00/LogVol00 /mnt[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hrealtime =none[19Cextsz=4096   blocks=0, rtextents=0[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;10H=[23Csectsz=512   sunit=0 blks, lazy-count=1[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hlog      =internal log[11Cbsize=4096   blocks=2560, version=2[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hnaming   =version 2[14Cbsize=4096   ascii-ci=0 ftype=1[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;10H=[23Csunit=0      swidth=0 blks[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hdata     =[23Cbsize=4096   blocks=2097152, imaxpct=25[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;10H=[23Ccrc=1[8Cfinobt=0, sparse=0[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;10H=[23Csectsz=512   attr=2, projid32bit=1[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1Hmeta-data=/dev/VolGroup00/LogVol00 isize=512    agcount=4, agsize=524288 blks[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1H[34m^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# mkfs.xfs /dev/VolGroup00/LogVol00[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;3HLogical volume "LogVol00" created.[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;3HWiping xfs signature on /dev/VolGroup00/LogVol00.[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1HWARNING: xfs signature detected on /dev/VolGroup00/LogVol00 at offset 0. Wipe it? [y/n]: y[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1H[34m^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# lvcreate -n VolGroup00/LogVol00 -L 8G /dev/VolGroup00[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1H[34m^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]#  [34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;3HLogical volume "LogVol00" successfully removed[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1HDo you really want to remove active logical volume VolGroup00/LogVol00? [y/n]: y[34m^M[?12l[?25h[?25l[27m[m[H[2J[1;1H[34m^[[m[?1049h[34m^[[m[?1h[34m^[[m=[34m^[[m[1;35r[34m^[[m[?12;25h[34m^[[m[?12l[34m^[[m[?25h[34m^[[m[27m[34m^[[m[m[34m^[[m[H[34m^[[m[2J[34m^[[m[?25l[34m^[[m[35;1H"typescript" 0L, 0C[34m^[[m[2;1H[34m^[[m[94m~[32C  [2;1H [115C[34m^[[m[3;1H~[25C  [3;1H [122C[34m^[[m[4;1H~[18C  [4;1H [129C[34m^[[m[5;1H~[11C  [5;1H [136C[34m^[[m[6;1H~      [6;1H [143C[34m^[[m[7;11[7;1HH~[147C  [8;1H [34m^[[m[8;1H~[140C  [9;1H [7C[34m^[[m[9;1H~[133C  [10;1H [14C[34m^[[m[10;1H~[125C  [11;1H [22C[34m^[[m[11;1H~[117C  [12;1H [30C[34m^[[m[12;1H~[109C  [13;1H [38C[34m^[[m[13;1H~[101C  [14;1H [46C[34m^[[m[14;1H~[93C  [15;1H [54C[34m^[[m[15;1H~[85C  [16;1H [62C[34m^[[m[16;1H~[77C  [17;1H [70C[34m^[[m[17;1H~[69C  [18;1H [78C[34m^[[m[18;1H~[61C  [19;1H [86C[34m^[[m[19;1H~[53C  [20;1H [94C[34m^[[m[20;1H~[45C  [21;1H [102C[34m^[[m[21;1H~[37C  [22;1H [110C[34m^[[m[22;1H~[29C  [23;1H [118C[34m^[[m[23;1H~[21C  [24;1H [126C[34m^[[m[24;1H~[13C  [25;1H [134C[34m^[[m[25;1H~       [26;1H [142C[34m^[[m[26;11[27;1HH~[147C  [28;1H [34m^[[m[27;1H~[139C  [29;1H [8C[34m^[[m[28;1H~[131C  [30;1H [16C[34m^[[m[29;1H~[123C  [31;1H [24C[34m^[[m[30;1H~[115C  [32;1H [32C[34m^[[m[31;1H~[107C  [33;1H [40C[34m^[[m[32;1H~[99C  [34;1H [48C[34m^[[m[33;1H~[1;1H[?12l[?25h[?25l[1;34r[1;1H[3L[1;35r[1;1H[34m^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G^[[m[?1034h[root@otuslvm vagrant]# exit[34m^H^H^H^H[mlvremove /dev/VolGroup00/LogVol00[34m^M^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[[m[2;1H[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[Creboot[34m^[[m[K[34m^H^H^H^H^H^H[mlvremove /dev/VolGroup00/LogVol00[34m^M^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[[[3;1HC[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[Csblk[34m^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^G^G^G^G^G^G^G[mvi typescript [34m^M[m
+[94m@                                                                                                                                                     [5;1H@                                                                                                                                                     [6;1H@                                                                                                                                                     [7;1H@                                                                                                                                                     [8;1H@                                                                                                                                                     [9;1H@                                                                                                                                                     [10;1H@                                                                                                                                                     [11;1H@                                                                                                                                                     [12;1H@                                                                                                                                                     [13;1H@                                                                                                                                                     [14;1H@                                                                                                                                                     [15;1H@                                                                                                                                                     [16;1H@                                                                                                                                                     [17;1H@                                                                                                                                                     [18;1H@                                                                                                                                                     [19;1H@                                                                                                                                                     [20;1H@                                                                                                                                                     [21;1H@                                                                                                                                                     [22;1H@                                                                                                                                                     [23;1H@                                                                                                                                                     [24;1H@                                                                                                                                                     [25;1H@                                                                                                                                                     [26;1H@                                                                                                                                                     [27;1H@                                                                                                                                                     [28;1H@                                                                                                                                                     [29;1H@                                                                                                                                                     [30;1H@                                                                                                                                                     [31;1H@                                                                                                                                                     [32;1H@                                                                                                                                                     [33;1H@                                                                                                                                                     [34;1H@                                                                                                                                                     [1;1H[?12l[?25h[?25l[1;34r[m[1;1H[L[1;35r[1;1HScript started on Fri 12 Apr 2019 02:18:33 PM UTC[?12l[?25h
+[?25l[1;34r[1;1H[4M[1;35r[1;1H[34m^[[m[?1049h[34m^[[m[?1h[34m^[[m=[34m^[[m[1;35r[34m^[[m[?12;25h[34m^[[m[?12l[34m^[[m[?25h[34m^[[m[27m[34m^[[m[m[34m^[[m[H[34m^[[m[2J[34m^[[m[?25l[34m^[[m[35;1H"typescript" 0L, 0C[34m^[[m[2;1H[34m^[[m[94m~                                  [2;1H                                                                                                                    [34m^[[m[3;1H~                           [3;1H                                                                                                                           [34m^[[m[4;1H~                    [4;1H                                                                                                                                  [34m^[[m[5;1H~             [5;1H                                                                                                                                         [34m^[[m[6;1H~      [6;1H                                                                                                                                                [34m^[[m[7;11[7;1HH~                                                                                                                                                     [8;1H [34m^[[m[8;1H~                                                                                                                                              [9;1H        [34m^[[m[9;1H~                                                                                                                                       [10;1H               [34m^[[m[10;1H~                                                                                                                               [11;1H                       [34m^[[m[11;1H~                                                                                                                       [12;1H                               [34m^[[m[12;1H~                                                                                                               [13;1H                                       [34m^[[m[13;1H~                                                                                                       [14;1H                                               [34m^[[m[14;1H~                                                                                               [15;1H                                                       [34m^[[m[15;1H~                                                                                       [16;1H                                                               [34m^[[m[16;1H~                                                                               [17;1H                                                                       [34m^[[m[17;1H~                                                                       [18;1H                                                                               [34m^[[m[18;1H~                                                               [19;1H                                                                                       [34m^[[m[19;1H~                                                       [20;1H                                                                                               [34m^[[m[20;1H~                                               [21;1H                                                                                                       [34m^[[m[21;1H~                                       [22;1H                                                                                                               [34m^[[m[22;1H~                               [23;1H                                                                                                                       [34m^[[m[23;1H~                       [24;1H                                                                                                                               [34m^[[m[24;1H~               [25;1H                                                                                                                                       [34m^[[m[25;1H~       [26;1H                                                                                                                                               [34m^[[m[26;11[27;1HH~                                                                                                                                                     [28;1H [34m^[[m[27;1H~                                                                                                                                             [29;1H         [34m^[[m[28;1H~                                                                                                                                     [30;1H                 [34m^[[m[29;1H~                                                                                                                             [31;1H [24C[34m^[[m[30;1H~[115C  [32;1H [32C[34m^[[m[31;1H~[107C  [33;1H [40C[34m^[[m[32;1H~[99C  [34;1H [48C[34m^[[m[33;1H~[1;1H[?12l[?25h[?25l[27m[m[H[2J[1;1HDo you really want to remove active logical volume VolGroup00/LogVol00? [y/n]: y[34m^M[m
+  Logical volume "LogVol00" successfully removed[34m^M
+^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]#  [34m^M
+^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# lvcreate -n VolGroup00/LogVol00 -L 8G /dev/VolGroup00[34m^M[m
+WARNING: xfs signature detected on /dev/VolGroup00/LogVol00 at offset 0. Wipe it? [y/n]: y[34m^M[m
+  Wiping xfs signature on /dev/VolGroup00/LogVol00.[34m^M[m
+  Logical volume "LogVol00" created.[34m^M
+^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# mkfs.xfs /dev/VolGroup00/LogVol00[34m^M[m
+meta-data=/dev/VolGroup00/LogVol00 isize=512    agcount=4, agsize=524288 blks[34m^M[m[10;10H=[23Csectsz=512   attr=2, projid32bit=1[34m^M[m[11;10H=[23Ccrc=1[8Cfinobt=0, sparse=0[34m^M[m
+data     =[23Cbsize=4096   blocks=2097152, imaxpct=25[34m^M[m[13;10H=[23Csunit=0      swidth=0 blks[34m^M[m
+naming   =version 2[14Cbsize=4096   ascii-ci=0 ftype=1[34m^M[m
+log      =internal log[11Cbsize=4096   blocks=2560, version=2[34m^M[m[16;10H=[23Csectsz=512   sunit=0 blks, lazy-count=1[34m^M[m
+realtime =none[19Cextsz=4096   blocks=0, rtextents=0[34m^M
+^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# mount /dev/VolGroup00/LogVol00 /mnt[34m^M
+^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# mount /dev/VolGroup00/LogVol00 /mnt[34m^M[m
+mount: /dev/mapper/VolGroup00-LogVol00 is already mounted or /mnt busy[34m^M[m[21;8H/dev/mapper/VolGroup00-LogVol00 is already mounted on /mnt[34m^M
+^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# xfsdump -J - /dev/vg_root/lv_root | xfsrestore -J - /mnt[34m^M[m
+xfsrestore: using file dump (drive_simple) strategy[34m^M[m
+xfsrestore: version 3.1.7 (dump format 3.0)[34m^M[m
+xfsdump: using file dump (drive_simple) strategy[34m^M[m
+xfsdump: version 3.1.7 (dump format 3.0)[34m^M[m
+xfsdump: level 0 dump of otuslvm:/[34m^M[m
+xfsdump: dump date: Fri Apr 12 14:19:47 2019[34m^M[m
+xfsdump: session id: a144379e-ac4d-4450-965e-37170f825059[34m^M[m
+xfsdump: session label: ""[34m^M[m
+xfsrestore: searching media for dump[34m^M[m
+xfsdump: ino map phase 1: constructing initial dump list[34m^M[m
+xfsdump: ino map phase 2: skipping (no pruning necessary)[34m^M[m
+xfsdump: ino map phase 3: skipping (only one dump stream)[34m^M[1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: ino map construction complete[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: estimated dump size: 860462080 bytes[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: creating dump session media file 0 (media 0, file 0)[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: dumping ino map[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: dumping directories[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: examining media file 0[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: dump description: [34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: hostname: otuslvm[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: mount point: /[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: volume: /dev/mapper/vg_root-lv_root[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: session time: Fri Apr 12 14:19:47 2019[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: level: 0[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: session label: ""[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: media label: ""[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: file system id: e688366f-ea9d-46d9-a213-f009a34bb99d[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: session id: a144379e-ac4d-4450-965e-37170f825059[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: media id: ae8e2b2a-2a5f-4adc-ba5e-cce928d4b489[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: searching media for directory dump[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: reading directories[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: dumping non-directory files[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: 2715 directories and 23814 entries processed[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: directory post-processing[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: restoring non-directory files[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: ending media file[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: media file size 836826728 bytes[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: dump size (non-dir files) : 823538864 bytes[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: dump complete: 58 seconds elapsed[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsdump: Dump Status: SUCCESS[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: restore complete: 58 seconds elapsed[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hxfsrestore: Restore Status: SUCCESS[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[4M[1;35r[31;1H[34m^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# for i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind $i /mnt/$i; done[34m^M^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[[m[32;1H[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[18Pxfsdump -J - /dev/vg_root/lv_root | xfsrestore -J - /mnt[34m^M^[[m[CC[33;1H[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[C[34m^[[m[Cfor i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind  [34;1H$i /mnt/$i; done[34m^G^M[31;1H[?12l[?25h[?25l[1;34r[m[1;1H[5M[1;35r[30;1H[34m^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# for i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind $i /mnt/$i; done[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[[m[31;1H[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[[m[32;1H[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[[m[33;1H[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^H^[[m[K[34m^G^G^G^G^G^G[mchroot /mnn[34;1Ht/[34m^M[30;1H[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1H[34m^[[m]0;vagrant@otuslvm:/[34m^G^[[m[?1034h[root@otuslvm /]# grub2-mkconfig -o /boot/grub2/grub.cfg[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1HGenerating grub configuration file ...[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1HFound linux image: /boot/vmlinuz-3.10.0-862.2.3.el7.x86_64[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1HFound initrd image: /boot/initramfs-3.10.0-862.2.3.el7.x86_64.img[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdone[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[2M[1;35r[33;1H[34m^[[m]0;vagrant@otuslvm:/[34m^G[m[root@otuslvm /]# cd /boot ; for i in `ls initramfs-*img`; do dracut -v $i `echo $i|sed "s/initramfs-//g; s/.img//g"` --force;;[34;1H done[34m^M[33;1H[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1HExecuting: /usr/bin/dracut -v initramfs-3.10.0-862.2.3.el7.x86_64.img 3.10.0-862.2.3.el7.x86_64 --force[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'busybox' will not be installed, because command 'busybox' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'dmraid' will not be installed, because command 'dmraid' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'multipath' will not be installed, because command 'multipath' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'busybox' will not be installed, because command 'busybox' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'dmraid' will not be installed, because command 'dmraid' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1Hdracut module 'multipath' will not be installed, because command 'multipath' could not be found![34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1H*** Including module: bash ***[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1H*** Including module: nss-softokn ***[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1H*** Including module: i18n ***[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1H*** Including module: drm ***[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1H*** Including module: plymouth ***[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1H*** Including module: dm ***[34m^M[?12l[?25h[?25l[1;34r[m[34;1H
+[1;35r[34;1HSkipping udev rule: 64-device-mapper.rules[34m^M[?12l[?25h[?25l[1;34r[m[1;1H[4M[1;35r[31;1HSkipping udev rule: 60-persistent-storage-dm.rules[34m^M[m
+Skipping udev rule: 55-dm.rules[34m^M[m
+*** Including module: kernel-modules ***[34m^M[m
+Omitting driver floppy[34m^M[31;1H[?12l[?25h
+
+
+[?25l[1;34r[m[1;1H[5M[1;35r[30;1H*** Including module: lvm ***[34m^M[m
+Skipping udev rule: 64-device-mapper.rules[34m^M[m
+Skipping udev rul
+[94m~                                                                                                                                                     [34;1H~                                                                                                                                                     [30;1H[?12l[?25h
+
+[?25l
+
+
+[m:[?12l[?25hq[?25l[35;1H[K[35;1H[?1l>[?12l[?25h[?1049l]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# exit
+exit
+
+Script done on Fri 12 Apr 2019 02:30:54 PM UTC
