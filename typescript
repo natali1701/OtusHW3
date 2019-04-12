@@ -1,0 +1,349 @@
+Script started on Fri 12 Apr 2019 01:43:04 PM UTC
+]0;vagrant@otuslvm:/home/vagrant[?1034h[root@otuslvm vagrant]# ls -a
+[0m[38;5;27m.[0m  [38;5;27m..[0m  .bash_logout  .bash_profile  .bashrc  [38;5;27m.ssh[0m  typescript
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# vi typescript 
+[?1049h[?1h=[1;24r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[24;1H"typescript" 0L, 0C[2;1H[94m~                                                                               [3;1H~                                                                               [4;1H~                                                                               [5;1H~                                                                               [6;1H~                                                                               [7;1H~                                                                               [8;1H~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [1;1H[?12l[?25h[?25l[m[24;1H[K[24;1H:[?12l[?25hq[?25l[24;1H[K[24;1H[?1l>[?12l[?25h[?1049l]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# pvcreate /dev/sdb[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kvi typescript 
+[?1049h[?1h=[1;24r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[24;1H"typescript" 0L, 0C[2;1H[94m~                                                                               [3;1H~                                                                               [4;1H~                                                                               [5;1H~                                                                               [6;1H~                                                                               [7;1H~                                                                               [8;1H~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [1;1H[?12l[?25h[?25l[m[24;1H[K[24;1H:[?12l[?25hq[?25l[24;1H[K[24;1H[?1l>[?12l[?25h[?1049l]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# pvcreate /dev/sdb
+  Physical volume "/dev/sdb" successfully created.
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# pvcreate /dev/sdb[3Pvi typescript 
+[?1049h[?1h=[1;24r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[24;1H"typescript" [noeol] 6L, 4096C[1;1HScript started on Fri 12 Apr 2019 01:43:04 PM UTC
+[34m^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G^[[m[?1034h[root@otuslvm vagrant]# ls -a[34m^M
+^[[m[0m[34m^[[m[38;5;27m.[34m^[[m[0m  [34m^[[m[38;5;27m..[34m^[[m[0m  .bash_logout  .bash_profile  .bashrcc[4;1H  [34m^[[m[38;5;27m.ssh[34m^[[m[0m  typescript[34m^M
+^[[m]0;vagrant@otuslvm:/home/vagrant[34m^G[m[root@otuslvm vagrant]# vi typescript [34m^M
+^[[m[?1049h[34m^[[m[?1h[34m^[[m=[34m^[[m[1;24r[34m^[[m[?12;25h[34m^[[m[?12l[34m^[[m[?25h[34m^[[m[27m[34m^[[m[m[34m^[[m[H[34m^[[m[2J[34m^[[m[?25l[34m^[[m[22[7;1H4;1H"typescript" 0L, 0C[34m^[[m[2;1H[34m^[[m[94m~[42C  [8;1H [35C[34m^[[m[3;1H~[35C  [9;1H [42C[34m^[[m[4;1H~[28C  [10;1H [49C[34m^[[m[5;1H~[21C  [11;1H [56C[34m^[[m[6;1H~[14C  [12;1H [63C[34m^[[m[7;1H~[7C  [13;1H [70C[34m^[[m[8;1H~  [14;1H [77C[34m^[[[m[15;1H[9;1H~[73C  [16;1H     [34m^[[m[10;1H~[65C  [17;1H [12C[34m^[[m[11;1H~[57C  [18;1H [20C[34m^[[m[12;1H~[49C  [19;1H [28C[34m^[[m[13;1H~[41C  [20;1H [36C[34m^[[m[14;1H~[33C  [21;1H [44C[34m^[[m[15;1H~[25C  [22;1H [52C[34m^[[m[16;1H~[17C  [23;1H [60C[34m^[[m[17;1H~[6;1H[94m@                                                                               [7;1H@                                                                               [8;1H@                                                                               [9;1H@                                                                               [10;1H@                                                                               [11;1H@                                                                               [12;1H@                                                                               [13;1H@                                                                               [14;1H@                                                                               [15;1H@                                                                               [16;1H@                                                                               [17;1H@                                                                               [18;1H@                                                                               [19;1H@                                                                               [20;1H@                                                                               [21;1H@                                                                               [22;1H@                                                                               [23;1H@                                                                               [1;1H[?12l[?25h[?25l[m[24;1H[K[24;1H:[?12l[?25hq[?25l[24;1H[K[24;1H[?1l>[?12l[?25h[?1049l]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# vgcreate vg_root /dev/sdb
+  Volume group "vg_root" successfully created
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# lvcreate -n lv_root -l +100%FREE /dev/vg_root
+  Logical volume "lv_root" created.
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# mkfs.xfs /dev/vg_root/lv_root
+meta-data=/dev/vg_root/lv_root   isize=512    agcount=4, agsize=655104 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=0, sparse=0
+data     =                       bsize=4096   blocks=2620416, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+log      =internal log           bsize=4096   blocks=2560, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# mount /dev/vg_root/lv_root /mnt
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# xfsdump -J - /dev/VolGroup00/LogVol00 | xfsrestore -J -  /mnt
+xfsrestore: using file dump (drive_simple) strategy
+xfsrestore: version 3.1.7 (dump format 3.0)
+xfsdump: using file dump (drive_simple) strategy
+xfsdump: version 3.1.7 (dump format 3.0)
+xfsdump: level 0 dump of otuslvm:/
+xfsdump: dump date: Fri Apr 12 13:45:27 2019
+xfsdump: session id: 2fe2054c-6e60-412a-8784-6b38f298dcd0
+xfsdump: session label: ""
+xfsrestore: searching media for dump
+xfsdump: ino map phase 1: constructing initial dump list
+xfsdump: ino map phase 2: skipping (no pruning necessary)
+xfsdump: ino map phase 3: skipping (only one dump stream)
+xfsdump: ino map construction complete
+xfsdump: estimated dump size: 861337024 bytes
+xfsdump: creating dump session media file 0 (media 0, file 0)
+xfsdump: dumping ino map
+xfsdump: dumping directories
+xfsrestore: examining media file 0
+xfsrestore: dump description: 
+xfsrestore: hostname: otuslvm
+xfsrestore: mount point: /
+xfsrestore: volume: /dev/mapper/VolGroup00-LogVol00
+xfsrestore: session time: Fri Apr 12 13:45:27 2019
+xfsrestore: level: 0
+xfsrestore: session label: ""
+xfsrestore: media label: ""
+xfsrestore: file system id: b60e9498-0baa-4d9f-90aa-069048217fee
+xfsrestore: session id: 2fe2054c-6e60-412a-8784-6b38f298dcd0
+xfsrestore: media id: 3ae35cd4-81a1-428c-b8fc-0574af8d5d5c
+xfsrestore: searching media for directory dump
+xfsrestore: reading directories
+xfsdump: dumping non-directory files
+xfsrestore: 2711 directories and 23809 entries processed
+xfsrestore: directory post-processing
+xfsrestore: restoring non-directory files
+xfsdump: ending media file
+xfsdump: media file size 838289800 bytes
+xfsdump: dump size (non-dir files) : 825005624 bytes
+xfsdump: dump complete: 55 seconds elapsed
+xfsdump: Dump Status: SUCCESS
+xfsrestore: restore complete: 57 seconds elapsed
+xfsrestore: Restore Status: SUCCESS
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# ls /mnt
+[0m[38;5;51mbin[0m   [38;5;27mdev[0m  [38;5;27mhome[0m  [38;5;51mlib64[0m  [38;5;27mmnt[0m  [38;5;27mproc[0m  [38;5;27mrun[0m   [38;5;27msrv[0m  [48;5;10;38;5;16mtmp[0m  [38;5;27mvagrant[0m
+[38;5;27mboot[0m  [38;5;27metc[0m  [38;5;51mlib[0m   [38;5;27mmedia[0m  [38;5;27mopt[0m  [38;5;27mroot[0m  [38;5;51msbin[0m  [38;5;27msys[0m  [38;5;27musr[0m  [38;5;27mvar[0m
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# for i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bin d $i /mnt/$i; done
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# chroot /mnt/
+]0;vagrant@otuslvm:/[?1034h[root@otuslvm /]#  grub2-mkconfig -o /boot/grub2/grub.cfg
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-3.10.0-862.2.3.el7.x86_64
+Found initrd image: /boot/initramfs-3.10.0-862.2.3.el7.x86_64.img
+done
+]0;vagrant@otuslvm:/[root@otuslvm /]#  grub2-mkconfig -o /boot/grub2/grub.cfg[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kls -a
+[0m[38;5;27m.[0m   [38;5;51mbin[0m   [38;5;27mdev[0m  [38;5;27mhome[0m  [38;5;51mlib64[0m  [38;5;27mmnt[0m  [38;5;27mproc[0m  [38;5;27mrun[0m   [38;5;27msrv[0m  [48;5;10;38;5;16mtmp[0m  [38;5;27mvagrant[0m
+[38;5;27m..[0m  [38;5;27mboot[0m  [38;5;27metc[0m  [38;5;51mlib[0m   [38;5;27mmedia[0m  [38;5;27mopt[0m  [38;5;27mroot[0m  [38;5;51msbin[0m  [38;5;27msys[0m  [38;5;27musr[0m  [38;5;27mvar[0m
+]0;vagrant@otuslvm:/[root@otuslvm /]# vi tmp/[K[K[Kyp[1Pls -a grub2-mkconfig -o /boot/grub2/grub.cfg[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -a[Kvi typ[1Pls -a grub2-mkconfig -o /boot/grub2/grub.cfg[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcd /boot ; for i in `ls initramfs-*img`; do dracut -v $i `echo  $i|sed "s/initramfs-//g; s/.img//g"` --force; done
+Executing: /usr/bin/dracut -v initramfs-3.10.0-862.2.3.el7.x86_64.img 3.10.0-862.2.3.el7.x86_64 --force
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+*** Including module: bash ***
+*** Including module: nss-softokn ***
+*** Including module: i18n ***
+*** Including module: drm ***
+*** Including module: plymouth ***
+*** Including module: dm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 60-persistent-storage-dm.rules
+Skipping udev rule: 55-dm.rules
+*** Including module: kernel-modules ***
+Omitting driver floppy
+*** Including module: lvm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 56-lvm.rules
+Skipping udev rule: 60-persistent-storage-lvm.rules
+*** Including module: qemu ***
+*** Including module: resume ***
+*** Including module: rootfs-block ***
+*** Including module: terminfo ***
+*** Including module: udev-rules ***
+Skipping udev rule: 40-redhat-cpu-hotplug.rules
+Skipping udev rule: 91-permissions.rules
+*** Including module: biosdevname ***
+*** Including module: systemd ***
+*** Including module: usrmount ***
+*** Including module: base ***
+*** Including module: fs-lib ***
+*** Including module: shutdown ***
+*** Including modules done ***
+*** Installing kernel module dependencies and firmware ***
+*** Installing kernel module dependencies and firmware done ***
+*** Resolving executable dependencies ***
+*** Resolving executable dependencies done***
+*** Hardlinking files ***
+*** Hardlinking files done ***
+*** Stripping files ***
+*** Stripping files done ***
+*** Generating early-microcode cpio image contents ***
+*** Constructing AuthenticAMD.bin ****
+*** Store current command line parameters ***
+*** Creating image file ***
+*** Creating microcode section ***
+*** Created microcode section ***
+*** Creating image file done ***
+*** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
+]0;vagrant@otuslvm:/boot[root@otuslvm boot]# cd /boot ; for i in `ls initramfs-*img`; do dracut -v $i `eccho $i|sed "s/initramfs-//g; s/.img//g"` --force; done[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd grub2/
+]0;vagrant@otuslvm:/boot/grub2[root@otuslvm grub2]# vi gra[Kub.cfg 
+[?1049h[?1h=[1;24r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[24;1H"grub.cfg" 127L, 3658C[1;1H#
+# DO NOT EDIT THIS FILE
+#
+# It is automatically generated by grub2-mkconfig using templates
+# from /etc/grub.d and settings from /etc/default/grub
+#
+
+### BEGIN /etc/grub.d/00_header ###
+set pager=1
+
+if [ -s $prefix/grubenv ]; then
+  load_env
+fi
+if [ "${next_entry}" ] ; then
+   set default="${next_entry}"
+   set next_entry=
+   save_env next_entry
+   set boot_once=true
+else
+   set default="${saved_entry}"
+fi
+
+if [ x"${feature_menuentry_id}" = xy ]; then[1;1H[?12l[?25h[?25l[24;1H[1m-- INSERT --[m[24;13H[K[1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[?25l[1;23r[1;1H[2M[1;24r[22;3Hmenuentry_id_option="--id"
+else[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;3Hmenuentry_id_option=""
+fi
+[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;1Hexport menuentry_id_option
+
+if [ "${prev_saved_entry}" ]; then[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;3Hset saved_entry="${prev_saved_entry}"
+  save_env saved_entry
+  set prev_saved_entry=[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;3Hsave_env prev_saved_entry
+  set boot_once=true
+fi[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[22;1Hfunction savedefault {
+  if [ -z "${boot_once}" ]; then[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;5Hsaved_entry="${chosen}"
+    save_env saved_entry
+  fi[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;1H}
+
+function load_video {[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;3Hif [ x$feature_all_video_module = xy ]; then
+    insmod all_video
+  else[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;5Hinsmod efi_gop
+    insmod efi_uga
+    insmod ieee1275_fb[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;5Hinsmod vbe
+    insmod vga
+    insmod video_bochs[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;5Hinsmod video_cirrus
+  fi
+}[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[22;1Hterminal_output console
+if [ x$feature_timeout_style = xy ] ; then[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;3Hset timeout_style=menu
+  set timeout=1
+# Fallback normal timeout code in case the timeout_style feature is[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;1H# unavailable.
+else
+  set timeout=1[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;1Hfi
+### END /etc/grub.d/00_header ###
+[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;1H### BEGIN /etc/grub.d/00_tuned ###
+set tuned_params=""
+set tuned_initrd=""[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;1H### END /etc/grub.d/00_tuned ###
+
+### BEGIN /etc/grub.d/01_users ###[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;1Hif [ -f ${prefix}/user.cfg ]; then
+  source ${prefix}/user.cfg
+  if [ -n "${GRUB2_PASSWORD}" ]; then[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;5Hset superusers="root"
+    export superusers
+    password_pbkdf2 root ${GRUB2_PASSWORD}[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;3Hfi
+fi
+### END /etc/grub.d/01_users ###[?12l[?25h[?25l[1;23r[1;1H[5M[1;24r[20;1H### BEGIN /etc/grub.d/10_linux ###
+menuentry 'CentOS Linux (3.10.0-862.2.3.el7.x86_64) 7 (Core)' --class centos --cc[22;1Hlass gnu-linux --class gnu --class os --unrestricted $menuentry_id_option 'gnulii[23;1Hnux-3.10.0-862.2.3.el7.x86_64-advanced-e688366f-ea9d-46d9-a213-f009a34bb99d' {[21;1H[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;9Hload_video[22;9Hset gfxpayload=keep[23;9Hinsmod gzio[?12l[?25h[?25l[1;23r[1;1H[3M[1;24r[21;9Hinsmod part_msdos[22;9Hinsmod xfs[23;9Hset root='hd0,msdos2'[?12l[?25h[?25l[1;23r[1;1H[4M[1;24r[20;9Hif [ x$feature_platform_search_hint = xy ]; then[21;11Hsearch --no-floppy --fs-uuid --set=root --hint-bios=hd0,msdos2 --hint--[22;1Hefi=hd0,msdos2 --hint-baremetal=ahci0,msdos2  570897ca-e759-4c81-90cf-389da6eee44[23;1Hcc
+[?12l[?25h[?25l[1;23r[1;1H[8M[1;24r[16;9Helse[17;11Hsearch --no-floppy --fs-uuid --set=root 570897ca-e759-4c81-90cf-389da66[18;1Heee4cc[19;9Hfi[20;9Hlinux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mapper/vg_root-lv_rr[21;1Hoot ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevnn[22;1Hame=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=Voll[23;1HGroup00/LogVol01 rhgb quiet[20;1H[?12l[?25h[?25l[1;23r[1;1H[5M[1;24r[19;9Hinitrd16 /initramfs-3.10.0-862.2.3.el7.x86_64.img
+}
+if [ "x$default" = 'CentOS Linux (3.10.0-862.2.3.el7.x86_64) 7 (Core)' ]; then dd[22;1Hefault='Advanced options for CentOS Linux>CentOS Linux (3.10.0-862.2.3.el7.x86_66[23;1H4) 7 (Core)'; fi;[21;1H[?12l[?25h[20;1H[19;1H[15;1H[14;1H
+[19;1H[8C[49C[18;29H[17;80Hl00[?25l rd.lvm.lv=VolGG[18;1Hroup00/LogVol01 rhgb quiet [17;66H[?12l[?25h[?25l rd.lvm.lv=VolGrr[18;1Houp00/LogVol01 rhgb quiet [17;65H[?12l[?25h[?25l rd.lvm.lv=VolGroo[18;1Hup00/LogVol01 rhgb quiet [17;64H[?12l[?25h[?25l rd.lvm.lv=VolGrouu[18;1Hp00/LogVol01 rhgb quiet [17;63H[?12l[?25h[?25l rd.lvm.lv=VolGroupp[18;1H00/LogVol01 rhgb quiet [17;62H[?12l[?25h[?25l rd.lvm.lv=VolGroup00[18;1H0/LogVol01 rhgb quiet [17;61H[?12l[?25h[?25l rd.lvm.lv=VolGroup000[18;1H/LogVol01 rhgb quiet [17;60H[?12l[?25h[?25l rd.lvm.lv=VolGroup00//[18;1HLogVol01 rhgb quiet [17;59H[?12l[?25h[?25l rd.lvm.lv=VolGroup00/LL[18;1HogVol01 rhgb quiet [17;58H[?12l[?25h[?25l rd.lvm.lv=VolGroup00/Loo[18;1HgVol01 rhgb quiet [17;57H[?12l[?25h[?25l rd.lvm.lv=VolGroup00/Logg[18;1HVol01 rhgb quiet [17;56H[?12l[?25h[?25l rd.lvm.lv=VolGroup00/LogVV[18;1Hol01 rhgb quiet [17;55H[?12l[?25h[?25l rd.lvm.lv=VolGroup00/LogVoo[18;1Hl01 rhgb quiet [17;54H[?12l[?25h[?25l rd.lvm.lv=VolGroup00/LogVoll[18;1H01 rhgb quiet [17;53H[?12l[?25h[?25l rd.lvm.lv=VolGroup00/LogVol00[18;1H1 rhgb quiet [17;52H[?12l[?25h[?25l rd.lvm.lv=VolGroup00/LogVol011[18;1H rhgb quiet [17;51H[?12l[?25h[?25l rd.lvm.lv=VolGroup00/LogVol01  [18;1Hrhgb quiet [17;50H[?12l[?25h[?25l rd.lvm.lv=VolGroup00/LogVol01 rr[18;1Hhgb quiet [17;49H[?12l[?25h[?25l rd.lvm.lv=VolGroup00/LogVol01 rhh[18;1Hgb quiet [17;48H[?12l[?25h[?25lvg_root/lv_root rd.lvm.lv=VolGrouu[18;1Hp00/LogVol01 rhgb quiet[17;63H[?12l[?25h[24;1H[K[17;62H[?25l[?12l[?25h[?25l[24;1H:[?12l[?25hwq[?25l"grub.cfg" 127L, 3654C written
+[?1l>[?12l[?25h[?1049l]0;vagrant@otuslvm:/boot/grub2[root@otuslvm grub2]# ls -a
+[0m[38;5;27m.[0m  [38;5;27m..[0m  device.map  [38;5;27mfonts[0m  grub.cfg  grubenv  [38;5;27mi386-pc[0m  [38;5;27mlocale[0m
+]0;vagrant@otuslvm:/boot/grub2[root@otuslvm grub2]# cd ..
+]0;vagrant@otuslvm:/boot[root@otuslvm boot]# cd ..
+]0;vagrant@otuslvm:/[root@otuslvm /]# ls -a
+[0m[38;5;27m.[0m   [38;5;51mbin[0m   [38;5;27mdev[0m  [38;5;27mhome[0m  [38;5;51mlib64[0m  [38;5;27mmnt[0m  [38;5;27mproc[0m  [38;5;27mrun[0m   [38;5;27msrv[0m  [48;5;10;38;5;16mtmp[0m  [38;5;27mvagrant[0m
+[38;5;27m..[0m  [38;5;27mboot[0m  [38;5;27metc[0m  [38;5;51mlib[0m   [38;5;27mmedia[0m  [38;5;27mopt[0m  [38;5;27mroot[0m  [38;5;51msbin[0m  [38;5;27msys[0m  [38;5;27musr[0m  [38;5;27mvar[0m
+]0;vagrant@otuslvm:/[root@otuslvm /]# cd ..
+]0;vagrant@otuslvm:/[root@otuslvm /]# cd
+]0;vagrant@otuslvm:~[root@otuslvm ~]# ls -a
+[0m[38;5;27m.[0m   anaconda-ks.cfg  .bash_profile  .cshrc           [38;5;27m.ssh[0m
+[38;5;27m..[0m  .bash_logout     .bashrc        original-ks.cfg  .tcshrc
+]0;vagrant@otuslvm:~[root@otuslvm ~]# cd /r
+bash: cd: /r: No such file or directory
+]0;vagrant@otuslvm:~[root@otuslvm ~]# cd /r[K
+]0;vagrant@otuslvm:/[root@otuslvm /]# ls -a
+[0m[38;5;27m.[0m   [38;5;51mbin[0m   [38;5;27mdev[0m  [38;5;27mhome[0m  [38;5;51mlib64[0m  [38;5;27mmnt[0m  [38;5;27mproc[0m  [38;5;27mrun[0m   [38;5;27msrv[0m  [48;5;10;38;5;16mtmp[0m  [38;5;27mvagrant[0m
+[38;5;27m..[0m  [38;5;27mboot[0m  [38;5;27metc[0m  [38;5;51mlib[0m   [38;5;27mmedia[0m  [38;5;27mopt[0m  [38;5;27mroot[0m  [38;5;51msbin[0m  [38;5;27msys[0m  [38;5;27musr[0m  [38;5;27mvar[0m
+]0;vagrant@otuslvm:/[root@otuslvm /]# cd 
+]0;vagrant@otuslvm:~[root@otuslvm ~]# ;[Kls -aq
+[0m[38;5;27m.[0m   anaconda-ks.cfg  .bash_profile  .cshrc           [38;5;27m.ssh[0m
+[38;5;27m..[0m  .bash_logout     .bashrc        original-ks.cfg  .tcshrc
+]0;vagrant@otuslvm:~[root@otuslvm ~]# ls -aq[K
+[0m[38;5;27m.[0m   anaconda-ks.cfg  .bash_profile  .cshrc           [38;5;27m.ssh[0m
+[38;5;27m..[0m  .bash_logout     .bashrc        original-ks.cfg  .tcshrc
+]0;vagrant@otuslvm:~[root@otuslvm ~]# ls -a
+[0m[38;5;27m.[0m   anaconda-ks.cfg  .bash_profile  .cshrc           [38;5;27m.ssh[0m
+[38;5;27m..[0m  .bash_logout     .bashrc        original-ks.cfg  .tcshrc
+]0;vagrant@otuslvm:~[root@otuslvm ~]# ls -aq[K[K[K[K[K[Kcd /
+]0;vagrant@otuslvm:/[root@otuslvm /]# cd vagrant/
+]0;vagrant@otuslvm:/vagrant[root@otuslvm vagrant]# ls -a
+[0m[38;5;27m.[0m  [38;5;27m..[0m  .gitignore  Vagrantfile
+]0;vagrant@otuslvm:/vagrant[root@otuslvm vagrant]# vi typescript
+[?1049h[?1h=[1;24r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[24;1H"typescript" [New File][2;1H[94m~                                                                               [3;1H~                                                                               [4;1H~                                                                               [5;1H~                                                                               [6;1H~                                                                               [7;1H~                                                                               [8;1H~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [1;1H[?12l[?25h[?25l[m[24;1H[K[24;1H:[?12l[?25hq[?25l[24;1H[K[24;1H[?1l>[?12l[?25h[?1049l]0;vagrant@otuslvm:/vagrant[root@otuslvm vagrant]# [K[root@otuslvm vagrant]# ls -a
+[0m[38;5;27m.[0m  [38;5;27m..[0m  .gitignore  Vagrantfile
+]0;vagrant@otuslvm:/vagrant[root@otuslvm vagrant]# cd ..
+]0;vagrant@otuslvm:/[root@otuslvm /]# ls -a
+[0m[38;5;27m.[0m  [38;5;27m..[0m  [38;5;51mbin[0m  [38;5;27mboot[0m  [38;5;27mdev[0m  [38;5;27metc[0m  [38;5;27mhome[0m  [38;5;51mlib[0m  [38;5;51mlib64[0m  [38;5;27mmedia[0m  [38;5;27mmnt[0m  [38;5;27mopt[0m  [38;5;27mproc[0m  [38;5;27mroot[0m  [38;5;27mrun[0m  [38;5;51msbin[0m  [38;5;27msrv[0m  [38;5;27msys[0m  [48;5;10;38;5;16mtmp[0m  [38;5;27musr[0m  [38;5;27mvagrant[0m  [38;5;27mvar[0m
+]0;vagrant@otuslvm:/[root@otuslvm /]# cd mnt/
+]0;vagrant@otuslvm:/mnt[root@otuslvm mnt]# ls -a
+[0m[38;5;27m.[0m  [38;5;27m..[0m
+]0;vagrant@otuslvm:/mnt[root@otuslvm mnt]# find typescript
+find: ‘typescript’: No such file or directory
+]0;vagrant@otuslvm:/mnt[root@otuslvm mnt]# find typescript[K[K[K[K[K[K[K[K[K[K[K[Kd[K[K[Kind V[K.vagrant
+find: ‘.vagrant’: No such file or directory
+]0;vagrant@otuslvm:/mnt[root@otuslvm mnt]# finde[K .v[Kbashrc
+find: ‘.bashrc’: No such file or directory
+]0;vagrant@otuslvm:/mnt[root@otuslvm mnt]# find .bashrc[K[K[K[K[K[K[Kproc
+find: ‘proc’: No such file or directory
+]0;vagrant@otuslvm:/mnt[root@otuslvm mnt]# find proc[K[K[K[Kroot
+find: ‘root’: No such file or directory
+]0;vagrant@otuslvm:/mnt[root@otuslvm mnt]# find ==[K[K--help
+Usage: find [-H] [-L] [-P] [-Olevel] [-D help|tree|search|stat|rates|opt|exec] [path...] [expression]
+
+default path is the current directory; default expression is -print
+expression may consist of: operators, options, tests, and actions:
+
+operators (decreasing precedence; -and is implicit where no others are given):
+      ( EXPR )   ! EXPR   -not EXPR   EXPR1 -a EXPR2   EXPR1 -and EXPR2
+      EXPR1 -o EXPR2   EXPR1 -or EXPR2   EXPR1 , EXPR2
+
+positional options (always true): -daystart -follow -regextype
+
+normal options (always true, specified before other expressions):
+      -depth --help -maxdepth LEVELS -mindepth LEVELS -mount -noleaf
+      --version -xautofs -xdev -ignore_readdir_race -noignore_readdir_race
+
+tests (N can be +N or -N or N): -amin N -anewer FILE -atime N -cmin N
+      -cnewer FILE -ctime N -empty -false -fstype TYPE -gid N -group NAME
+      -ilname PATTERN -iname PATTERN -inum N -iwholename PATTERN -iregex PATTERN
+      -links N -lname PATTERN -mmin N -mtime N -name PATTERN -newer FILE
+      -nouser -nogroup -path PATTERN -perm [-/]MODE -regex PATTERN
+      -readable -writable -executable
+      -wholename PATTERN -size N[bcwkMG] -true -type [bcdpflsD] -uid N
+      -used N -user NAME -xtype [bcdpfls]
+      -context CONTEXT
+
+
+actions: -delete -print0 -printf FORMAT -fprintf FILE FORMAT -print 
+      -fprint0 FILE -fprint FILE -ls -fls FILE -prune -quit
+      -exec COMMAND ; -exec COMMAND {} + -ok COMMAND ;
+      -execdir COMMAND ; -execdir COMMAND {} + -okdir COMMAND ;
+
+Report (and track progress on fixing) bugs via the findutils bug-reporting
+page at http://savannah.gnu.org/ or, if you have no web access, by sending
+email to <bug-findutils@gnu.org>.
+]0;vagrant@otuslvm:/mnt[root@otuslvm mnt]# find --help[K[K[K[K[KD typescript
+find: Ignoring unrecognised debug flag ‘typescript’
+.
+]0;vagrant@otuslvm:/mnt[root@otuslvm mnt]# find -D typescript[7P-help[2Prootproc.bashrcvagranttypescript[10Pls -acd mnt/[2Pls -acd ..ls -avi typescript[8Pls -acd vagrant//[Kls -aq[3Pcd ls -a[1Pcd /rls -a[3Pcd ..ls -acd ..ls -avi grub.cfg [3Pcd grub2/vi grub.cfg l[K[K[K[K[K[K[K[K[K[K[K[K[Klsvblk
+bash: lsvblk: command not found
+]0;vagrant@otuslvm:/mnt[root@otuslvm mnt]# lsblk
+NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                       8:0    0   40G  0 disk 
+├─sda1                    8:1    0    1M  0 part 
+├─sda2                    8:2    0    1G  0 part /boot
+└─sda3                    8:3    0   39G  0 part 
+  ├─VolGroup00-LogVol00 253:0    0 37.5G  0 lvm  
+  └─VolGroup00-LogVol01 253:1    0  1.5G  0 lvm  [SWAP]
+sdb                       8:16   0   10G  0 disk 
+└─vg_root-lv_root       253:2    0   10G  0 lvm  /
+sdc                       8:32   0    2G  0 disk 
+sdd                       8:48   0    1G  0 disk 
+sde                       8:64   0    1G  0 disk 
+]0;vagrant@otuslvm:/mnt[root@otuslvm mnt]# lvremove /dev/VolGroup00/LogVol00
+  Logical volume VolGroup00/LogVol00 contains a filesystem in use.
+]0;vagrant@otuslvm:/mnt[root@otuslvm mnt]# lvremove /dev/VolGroup00/LogVol00
+  Logical volume VolGroup00/LogVol00 contains a filesystem in use.
+]0;vagrant@otuslvm:/mnt[root@otuslvm mnt]# reboot
+Running in chroot, ignoring request.
+]0;vagrant@otuslvm:/mnt[root@otuslvm mnt]# lvremove /dev/VolGroup00/LogVol00
+  Logical volume VolGroup00/LogVol00 contains a filesystem in use.
+]0;vagrant@otuslvm:/mnt[root@otuslvm mnt]# exit
+exit
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# exit
+exit
+
+Script done on Fri 12 Apr 2019 02:07:03 PM UTC
