@@ -37,25 +37,25 @@ data     =                       bsize=4096   blocks=524288, imaxpct=25
          =                       sunit=0      swidth=0 blks
 naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
 log      =internal log           bsize=
-^[]0;vagrant@otuslvm:/home/vagrant^G[root@otuslvm vagrant]#lsblk
-NAME                     MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT^M
-sda                        8:0    0   40G  0 disk^M
-├─sda1                     8:1    0    1M  0 part^M
-├─sda2                     8:2    0    1G  0 part /mnt/boot^M
-└─sda3                     8:3    0   39G  0 part^M
-  ├─VolGroup00-LogVol01  253:1    0  1.5G  0 lvm  [SWAP]^M
-  └─VolGroup00-LogVol00  253:2    0    8G  0 lvm  /mnt^M
-sdb                        8:16   0   10G  0 disk^M
-└─vg_root-lv_root        253:0    0   10G  0 lvm  /^M
-sdc                        8:32   0    2G  0 disk^M
-├─vg_var-lv_var_rmeta_0  253:3    0    4M  0 lvm^M
-│ └─vg_var-lv_var        253:7    0  952M  0 lvm  /mnt/var^M
-└─vg_var-lv_var_rimage_0 253:4    0  952M  0 lvm^M
-  └─vg_var-lv_var        253:7    0  952M  0 lvm  /mnt/var^M
-sdd                        8:48   0    1G  0 disk^M
-├─vg_var-lv_var_rmeta_1  253:5    0    4M  0 lvm^M
-│ └─vg_var-lv_var        253:7    0  952M  0 lvm  /mnt/var^M
-└─vg_var-lv_var_rimage_1 253:6    0  952M  0 lvm^M
-  └─vg_var-lv_var        253:7    0  952M  0 lvm  /mnt/var^M
-sde                        8:64   0    1G  0 disk^M
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]#lsblk
+NAME                     MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                        8:0    0   40G  0 disk
+├─sda1                     8:1    0    1M  0 part
+├─sda2                     8:2    0    1G  0 part /mnt/boot
+└─sda3                     8:3    0   39G  0 part
+  ├─VolGroup00-LogVol01  253:1    0  1.5G  0 lvm  [SWAP]
+  └─VolGroup00-LogVol00  253:2    0    8G  0 lvm  /mnt
+sdb                        8:16   0   10G  0 disk
+└─vg_root-lv_root        253:0    0   10G  0 lvm  /
+sdc                        8:32   0    2G  0 disk
+├─vg_var-lv_var_rmeta_0  253:3    0    4M  0 lvm
+│ └─vg_var-lv_var        253:7    0  952M  0 lvm  /mnt/var
+└─vg_var-lv_var_rimage_0 253:4    0  952M  0 lvm
+  └─vg_var-lv_var        253:7    0  952M  0 lvm  /mnt/var
+sdd                        8:48   0    1G  0 disk
+├─vg_var-lv_var_rmeta_1  253:5    0    4M  0 lvm
+│ └─vg_var-lv_var        253:7    0  952M  0 lvm  /mnt/var
+└─vg_var-lv_var_rimage_1 253:6    0  952M  0 lvm
+  └─vg_var-lv_var        253:7    0  952M  0 lvm  /mnt/var
+sde                        8:64   0    1G  0 disk
 
