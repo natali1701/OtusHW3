@@ -89,7 +89,7 @@ sdd                          8:48   0    1G  0 disk
 └─vg_var-lv_var_rimage_1   253:6    0  952M  0 lvm  
   └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
 sde                          8:64   0    1G  0 disk 
-[?25l[35;1H[K[35;1H[?1l>[?12l[?25h[?1049l]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# exit
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# exit
 exit
 
-Script done on Fri 12 Apr 2019 11:50:34 PM UTC
+Script done on Fri 12 Apr 2019 12:02:34 PM UTC
