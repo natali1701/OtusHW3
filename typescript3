@@ -47,7 +47,49 @@ log      =internal log           bsize=
 ]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# lvcreate -L 100MB -s -n home_snap /dev/VolGroup00/LogVol_Home
   Rounding up size to full physical extent 128.00 MiB
   Logical volume "home_snap" created.
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# ll /home/file{1..20}
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file1
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file10
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file11
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file12
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file13
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file14
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file15
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file16
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file17
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file18
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file19
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file2
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file20
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file3
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file4
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file5
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file6
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file7
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file8
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file9
 ]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# rm -f /home/file{11..20}
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# ll /home/file{1..20}
+ls: cannot access /home/file11: No such file or directory
+ls: cannot access /home/file12: No such file or directory
+ls: cannot access /home/file13: No such file or directory
+ls: cannot access /home/file14: No such file or directory
+ls: cannot access /home/file15: No such file or directory
+ls: cannot access /home/file16: No such file or directory
+ls: cannot access /home/file17: No such file or directory
+ls: cannot access /home/file18: No such file or directory
+ls: cannot access /home/file19: No such file or directory
+ls: cannot access /home/file20: No such file or directory
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file1
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file10
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file2
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file3
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file4
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file5
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file6
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file7
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file8
+-rw-r--r--. 1 root root 0 Apr 13 04:57 /home/file9
 ]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# umount /home
 ]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# lvconvert --merge /dev/VolGroup00/home_snap
   Merging of volume VolGroup00/home_snap started.
