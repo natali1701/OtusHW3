@@ -1,0 +1,306 @@
+Script started on Sat 13 Apr 2019 01:18:39 PM UTC
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# lsblk
+NAME                       MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                          8:0    0   40G  0 disk 
+├─sda1                       8:1    0    1M  0 part 
+├─sda2                       8:2    0    1G  0 part /boot
+└─sda3                       8:3    0   39G  0 part 
+  ├─VolGroup00-LogVol00    253:0    0    8G  0 lvm  /
+  ├─VolGroup00-LogVol01    253:1    0  1.5G  0 lvm  [SWAP]
+  └─VolGroup00-LogVol_Home 253:2    0    2G  0 lvm  /home
+sdb                          8:16   0   10G  0 disk 
+sdc                          8:32   0    2G  0 disk 
+├─vg_var-lv_var_rmeta_0    253:3    0    4M  0 lvm  
+│ └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
+└─vg_var-lv_var_rimage_0   253:4    0  952M  0 lvm  
+  └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
+sdd                          8:48   0    1G  0 disk 
+├─vg_var-lv_var_rmeta_1    253:5    0    4M  0 lvm  
+│ └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
+└─vg_var-lv_var_rimage_1   253:6    0  952M  0 lvm  
+  └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
+sde                          8:64   0    1G  0 disk 
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# lvcreate -n LogVol_btrfs -L 2G /dev/VolGroup00
+ Logical volume "LogVol_btrfs" created.
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]#  lsblk
+NAME                        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                           8:0    0   40G  0 disk 
+├─sda1                        8:1    0    1M  0 part 
+├─sda2                        8:2    0    1G  0 part /boot
+└─sda3                        8:3    0   39G  0 part 
+  ├─VolGroup00-LogVol00     253:0    0    8G  0 lvm  /
+  ├─VolGroup00-LogVol01     253:1    0  1.5G  0 lvm  [SWAP]
+  ├─VolGroup00-LogVol_Home  253:2    0    2G  0 lvm  /home
+  └─VolGroup00-LogVol_btrfs 253:8    0    2G  0 lvm  
+sdb                           8:16   0   10G  0 disk 
+sdc                           8:32   0    2G  0 disk 
+├─vg_var-lv_var_rmeta_0     253:3    0    4M  0 lvm  
+│ └─vg_var-lv_var           253:7    0  952M  0 lvm  /var
+└─vg_var-lv_var_rimage_0    253:4    0  952M  0 lvm  
+  └─vg_var-lv_var           253:7    0  952M  0 lvm  /var
+sdd                           8:48   0    1G  0 disk 
+├─vg_var-lv_var_rmeta_1     253:5    0    4M  0 lvm  
+│ └─vg_var-lv_var           253:7    0  952M  0 lvm  /var
+└─vg_var-lv_var_rimage_1    253:6    0  952M  0 lvm  
+i  └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
+sde                          8:64   0    1G  0 disk 
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# mkfs.btrfs /dev/VolGroup00/LogVol_btrfs
+btrfs-progs v4.9.1
+See http://btrfs.wiki.kernel.org for more information.
+
+Label:              (null)
+UUID:               e9a5dee4-a1a7-4a14-84e0-3685d0839e4e
+Node size:          16384
+Sector size:        4096
+Filesystem size:    2.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         DUP             102.38MiB
+  System:           DUP               8.00MiB
+SSD detected:       no
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1     2.00GiB  /dev/VolGroup00/LogVol_btrfs
+
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]#  lsblk
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]#  mount /dev/VolGroup00/LogVol_btrfs /mnt/
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]#  lsblk
+NAME                        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                           8:0    0   40G  0 disk 
+├─sda1                        8:1    0    1M  0 part 
+├─sda2                        8:2    0    1G  0 part /boot
+└─sda3                        8:3    0   39G  0 part 
+  ├─VolGroup00-LogVol00     253:0    0    8G  0 lvm  /
+  ├─VolGroup00-LogVol01     253:1    0  1.5G  0 lvm  [SWAP]
+  ├─VolGroup00-LogVol_Home  253:2    0    2G  0 lvm  /home
+  └─VolGroup00-LogVol_btrfs 253:8    0    2G  0 lvm  /mnt
+sdb                           8:16   0   10G  0 disk 
+sdc                           8:32   0    2G  0 disk 
+├─vg_var-lv_var_rmeta_0     253:3    0    4M  0 lvm  
+│ └─vg_var-lv_var           253:7    0  952M  0 lvm  /var
+└─vg_var-lv_var_rimage_0    253:4    0  952M  0 lvm  
+  └─vg_var-lv_var           253:7    0  952M  0 lvm  /var
+sdd                          8:48   0    1G  0 disk 
+├─vg_var-lv_var_rmeta_1    253:5    0    4M  0 lvm  
+│ └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
+└─vg_var-lv_var_rimage_1   253:6    0  952M  0 lvm  
+  └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
+sde                          8:64   0    1G  0 disk
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# mount /dev/VolGroup00/LogVol_btrfs /opt/
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# lsblk
+NAME                       MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                          8:0    0   40G  0 disk 
+├─sda1                       8:1    0    1M  0 part 
+├─sda2                       8:2    0    1G  0 part /boot
+└─sda3                       8:3    0   39G  0 part 
+  ├─VolGroup00-LogVol00    253:0    0    8G  0 lvm  /
+  ├─VolGroup00-LogVol01    253:1    0  1.5G  0 lvm  [SWAP]
+  ├─VolGroup00-LogVol_Home 253:2    0    2G  0 lvm  /home
+  └─VolGroup00-LogVol_btrfs  253:8    0    2G  0 lvm  /opt
+sdb                          8:16   0   10G  0 disk 
+sdc                          8:32   0    2G  0 disk 
+├─vg_var-lv_var_rmeta_0    253:3    0    4M  0 lvm  
+│ └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
+└─vg_var-lv_var_rimage_0   253:4    0  952M  0 lvm  
+  └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
+sdd                          8:48   0    1G  0 disk 
+├─vg_var-lv_var_rmeta_1    253:5    0    4M  0 lvm  
+│ └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
+└─vg_var-lv_var_rimage_1   253:6    0  952M  0 lvm  
+  └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
+sde                          8:64   0    1G  0 disk 
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# echo "`blkid | grep btrfs | awk '{print $2}'` /opt btrfs defaults 0 0" >> /etc/fstab
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# more /etc/fstab 
+
+#
+# /etc/fstab
+# Created by anaconda on Sat May 12 18:50:26 2018
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+/dev/mapper/VolGroup00-LogVol00 /                       xfs     defaults        0 0
+UUID=570897ca-e759-4c81-90cf-389da6eee4cc /boot                   xfs     defaults        0 0
+/dev/mapper/VolGroup00-LogVol01 swap                    swap    defaults        0 0
+UUID="434f6ace-cbaa-4b5d-bb6a-2c023937837b" /var ext4 defaults 0 0
+UUID="65aa532a-307b-4979-87ad-ac7993248e94" /home xfs defaults 0 0
+UUID="e9a5dee4-a1a7-4a14-84e0-3685d0839e4e" /opt btrfs defaults 0 0
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# df
+Filesystem                          1K-blocks   Used Available Use% Mounted on
+/dev/mapper/VolGroup00-LogVol00       8378368 877876   7500492  11% /
+devtmpfs                                83176      0     83176   0% /dev
+tmpfs                                   92020      0     92020   0% /dev/shm
+tmpfs                                   92020   4524     87496   5% /run
+tmpfs                                   92020      0     92020   0% /sys/fs/cgroup
+/dev/sda2                             1038336  62272    976064   6% /boot
+/dev/mapper/vg_var-lv_var              943128 235056    642948  27% /var
+/dev/mapper/VolGroup00-LogVol_Home    2086912  32992   2053920   2% /home
+/dev/mapper/VolGroup00-LogVol_btrfs   2097152  16704   1870016   1% /mnt
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# pvcreate /dev/sdb
+  Physical volume "/dev/sdb" successfully created.
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# vgcreate vg_btrfs /dev/sdb
+  Volume group "vg_btrfs" successfully created
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# lvcreate -n lv_btrfs -l +80%FREE /dev/vg_btrfs
+WARNING: xfs signature detected on /dev/vg_btrfs/lv_btrfs at offset 0. Wipe it? [y/n]: y
+  Wiping xfs signature on /dev/vg_btrfs/lv_btrfs.
+  Logical volume "lv_btrfs" created.
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# lsblk
+NAME                           MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                              8:0    0   40G  0 disk 
+├─sda1                           8:1    0    1M  0 part 
+├─sda2                           8:2    0    1G  0 part /boot
+└─sda3                           8:3    0   39G  0 part 
+  ├─VolGroup00-LogVol00        253:0    0    8G  0 lvm  /
+  ├─VolGroup00-LogVol01        253:1    0  1.5G  0 lvm  [SWAP]
+  ├─VolGroup00-LogVol_Home     253:2    0    2G  0 lvm  /home
+  ├─VolGroup00-LogVol_Opt      253:9    0    2G  0 lvm  /opt
+sdb                              8:16   0   10G  0 disk 
+└─vg_btrfs-lv_btrfs            253:12   0    8G  0 lvm  
+sdc                              8:32   0    2G  0 disk 
+├─vg_var-lv_var_rmeta_0        253:3    0    4M  0 lvm  
+│ └─vg_var-lv_var              253:7    0  952M  0 lvm  /var
+└─vg_var-lv_var_rimage_0       253:4    0  952M  0 lvm  
+  └─vg_var-lv_var              253:7    0  952M  0 lvm  /var
+sdd                              8:48   0    1G  0 disk 
+├─vg_var-lv_var_rmeta_1        253:5    0    4M  0 lvm  
+│ └─vg_var-lv_var              253:7    0  952M  0 lvm  /var
+└─vg_var-lv_var_rimage_1       253:6    0  952M  0 lvm  
+  └─vg_var-lv_var              253:7    0  952M  0 lvm  /var
+sde                              8:64   0    1G  0 disk 
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# mkfs.btrfs /dev/vg_btrfs/lv_btrfs
+btrfs-progs v4.9.1
+See http://btrfs.wiki.kernel.org for more information.
+
+Label:              (null)
+UUID:               d23cd8c4-a478-4d2d-9153-e6d93d37cdb9
+Node size:          16384
+Sector size:        4096
+Filesystem size:    8.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         DUP             409.38MiB
+  System:           DUP               8.00MiB
+SSD detected:       no
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:
+   ID        SIZE  PATH
+    1     8.00GiB  /dev/vg_btrfs/lv_btrfs
+
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# mount /dev/vg_btrfs/lv_btrfs /mnt
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# umount /mnt
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# mount /dev/vg_btrfs/lv_btrfs /opt
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# echo "`blkid | grep btrfs | awk '{print $2}'` /opt btrfs defaults 0 0" >> /etc/fstab
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# more /etc/fstab
+
+#
+# /etc/fstab
+# Created by anaconda on Sat May 12 18:50:26 2018
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+/dev/mapper/VolGroup00-LogVol00 /                       xfs     defaults        0 0
+UUID=570897ca-e759-4c81-90cf-389da6eee4cc /boot                   xfs     defaults        0 0
+/dev/mapper/VolGroup00-LogVol01 swap                    swap    defaults        0 0
+UUID="434f6ace-cbaa-4b5d-bb6a-2c023937837b" /var ext4 defaults 0 0
+UUID="65aa532a-307b-4979-87ad-ac7993248e94" /home xfs defaults 0 0
+UUID="e9a5dee4-a1a7-4a14-84e0-3685d0839e4e" /opt btrfs defaults 0 0
+UUID="d23cd8c4-a478-4d2d-9153-e6d93d37cdb9" /opt btrfs defaults 0 0
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# lsblk
+NAME                        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                           8:0    0   40G  0 disk 
+├─sda1                        8:1    0    1M  0 part 
+├─sda2                        8:2    0    1G  0 part /boot
+└─sda3                        8:3    0   39G  0 part 
+  ├─VolGroup00-LogVol00     253:0    0    8G  0 lvm  /
+  ├─VolGroup00-LogVol01     253:1    0  1.5G  0 lvm  [SWAP]
+  ├─VolGroup00-LogVol_Home  253:2    0    2G  0 lvm  /home
+  └─VolGroup00-LogVol_btrfs 253:8    0    2G  0 lvm  /opt
+sdb                           8:16   0   10G  0 disk 
+└─vg_btrfs-lv_btrfs         253:9    0    8G  0 lvm  /opt
+sdc                           8:32   0    2G  0 disk 
+├─vg_var-lv_var_rmeta_0     253:3    0    4M  0 lvm  
+│ └─vg_var-lv_var           253:7    0  952M  0 lvm  /var
+└─vg_var-lv_var_rimage_0    253:4    0  952M  0 lvm  
+  └─vg_var-lv_var           253:7    0  952M  0 lvm  /var
+sdd                           8:48   0    1G  0 disk 
+├─vg_var-lv_var_rmeta_1     253:5    0    4M  0 lvm  
+│ └─vg_var-lv_var           253:7    0  952M  0 lvm  /var
+└─vg_var-lv_var_rimage_1    253:6    0  952M  0 lvm  
+  └─vg_var-lv_var           253:7    0  952M  0 lvm  /var
+sde                           8:64   0    1G  0 disk 
+
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# touch /opt/file{1..20}
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# ll /opt
+total 0
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file1
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file10
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file11
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file12
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file13
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file14
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file15
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file16
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file17
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file18
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file19
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file2
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file20
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file3
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file4
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file5
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file6
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file7
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file8
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file9
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# lvcreate -L 100MB -s -n btrfs_snap /dev/vg_btrfs/lv_btrfs
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# rm -f /opt/file{11..20}
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# ll /opt
+total 0
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file1
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file10
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file2
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file3
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file4
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file5
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file6
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file7
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file8
+-rw-r--r--. 1 root root 0 Apr 13 14:23 file9
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# umount /home
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# lvconvert --merge /dev/VolGroup00/home_snap
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# mount /home
+lvcreate -L 100MB -s -n btrfs_snap /dev/vg_btrfs/lv_btrfs
+  Logical volume "btrfs_snap" created.
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# rm -f /opt/file{11..20}
+]0;vagrant@otuslvm:/home/vagrant[root@otuslvm vagrant]# lsblk
+NAME                        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                           8:0    0   40G  0 disk 
+├─sda1                        8:1    0    1M  0 part 
+├─sda2                        8:2    0    1G  0 part /boot
+└─sda3                        8:3    0   39G  0 part 
+  ├─VolGroup00-LogVol00     253:0    0    8G  0 lvm  /
+  ├─VolGroup00-LogVol01     253:1    0  1.5G  0 lvm  [SWAP]
+  ├─VolGroup00-LogVol_Home  253:2    0    2G  0 lvm  /home
+  └─VolGroup00-LogVol_btrfs 253:8    0    2G  0 lvm  /opt
+sdb                           8:16   0   10G  0 disk 
+├─vg_btrfs-lv_btrfs-real    253:10   0    8G  0 lvm  
+│ ├─vg_btrfs-lv_btrfs       253:9    0    8G  0 lvm  /opt
+│ └─vg_btrfs-btrfs_snap     253:12   0    8G  0 lvm  
+└─vg_btrfs-btrfs_snap-cow   253:11   0  100M  0 lvm  
+  └─vg_btrfs-btrfs_snap     253:12   0    8G  0 lvm  
+sdc                           8:32   0    2G  0 disk 
+├─vg_var-lv_var_rmeta_0     253:3    0    4M  0 lvm  
+│ └─vg_var-lv_var           253:7    0  952M  0 lvm  /var
+└─vg_var-lv_var_rimage_0    253:4    0  952M  0 lvm  
+  └─vg_var-lv_var           253:7    0  952M  0 lvm  /var
+sdd                           8:48   0    1G  0 disk 
+├─vg_var-lv_var_rmeta_1     253:5    0    4M  0 lvm  
+│ └─vg_var-lv_var           253:7    0  952M  0 lvm  /var
+└─vg_var-lv_var_rimage_1    253:6    0  952M  0 lvm  
+  └─vg_var-lv_var           253:7    0  952M  0 lvm  /var
+sde                           8:64   0    1G  0 disk 
+
